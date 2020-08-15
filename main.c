@@ -56,8 +56,8 @@ int main()
 			//buffer2[start_cnt] = (uint32_t){prebuffer2[0], prebuffer2[1], prebuffer2[2]};
 			buff_f_1[start_cnt] =(float) buffer1[start_cnt] * 1.2 / 2097152;
 			buff_f_2[start_cnt] =(float) buffer2[start_cnt] * 1.2 / 2097152;
-			printf("prebuffer1 = %d prebuffer2 = %d \n", buffer1[start_cnt], buffer2[start_cnt]);
-			printf("prebuffer1 = %f prebuffer2 = %f \n", buff_f_1[start_cnt], buff_f_2[start_cnt]);
+			//printf("prebuffer1 = %d prebuffer2 = %d \n", buffer1[start_cnt], buffer2[start_cnt]);
+			//printf("prebuffer1 = %f prebuffer2 = %f \n", buff_f_1[start_cnt], buff_f_2[start_cnt]);
 			start_cnt = start_cnt + 1;
 		}
 
@@ -66,6 +66,7 @@ int main()
 	//for (int i = 0; i < 1024; i++) printf("led1 = %f led2 = %f\n", buff_f_1[i], buff_f_2[i]);
 	  for (int i = 0; i < 1024; i++) printf("%f, ", buff_f_1[i]);
 	while(1)
+	{
 		numbytes = 0;
 		float hr;
 		float spo2;
@@ -83,6 +84,7 @@ int main()
 		//buffer2[buffer_cnt] = (uint32_t){prebuffer2[0], prebuffer2[1], prebuffer2[2]};
 		buff_f_1[buffer_cnt] =(float) buffer1[buffer_cnt] * 1.2 / 2097152;
 		buff_f_2[buffer_cnt] =(float) buffer2[buffer_cnt] * 1.2 / 2097152;
+	}
 }
 
 unsigned int receive(unsigned char prebuffer1[], unsigned char prebuffer2[])
